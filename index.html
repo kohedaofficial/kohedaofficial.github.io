@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <title>KOHEDA Village | Official Website</title>
+  <meta
+    name="description"
+    content="Official website of KOHEDA Village. News, temple updates, newspapers, gallery, shops, and village information."
+  />
+
+  <!-- Open Graph for WhatsApp preview -->
+  <meta property="og:title" content="KOHEDA Village | Official Website" />
+  <meta property="og:description" content="Explore KOHEDA Village updates, temple news, newspapers, gallery, shops, and village information." />
+  <meta property="og:image" content="https://yourwebsiteurl.com/images/share-preview.jpg" />
+  <meta property="og:url" content="https://yourwebsiteurl.com/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter / fallback -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="KOHEDA Village | Official Website" />
+  <meta name="twitter:description" content="Explore KOHEDA Village updates, temple news, newspapers, gallery, shops, and village information." />
+  <meta name="twitter:image" content="https://yourwebsiteurl.com/images/share-preview.jpg" />
+
+  <style>
+    :root{
+      --bg-1:#030a08;
+      --bg-2:#071410;
+      --bg-3:#0b1d17;
+      --glass:rgba(255,255,255,0.08);
+      --glass-2:rgba(255,255,255,0.12);
+      --line:rgba(255,255,255,0.14);
+      --text:#f6fffb;
+      --muted:#c9ddd3;
+      --green:#28d98a;
+      --green-2:#96f4bf;
+      --gold:#ffd36a;
+      --danger:#ff9a9a;
+      --shadow:0 18px 40px rgba(0,0,0,0.35);
+      --radius:24px;
+      --radius-sm:18px;
+      --maxw:1240px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(40,217,138,0.14), transparent 26%),
+        radial-gradient(circle at top right, rgba(255,211,106,0.10), transparent 20%),
+        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 40%, var(--bg-3) 100%);
+      overflow-x:hidden;
+      user-select:none;
+      -webkit-user-select:none;
+      -ms-user-select:none;
+    }
+
+    img, video{
+      -webkit-user-drag:none;
+      user-drag:none;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(var(--maxw), 92%);
+      margin:auto;
+    }
+
+    .glass{
+      background:var(--glass);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+
+    .section{
+      padding:84px 0;
+      position:relative;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:34px;
+    }
+
+    .mini{
+      color:var(--green-2);
+      letter-spacing:1.3px;
+      text-transform:uppercase;
+      font-size:0.82rem;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+
+    .section-head h2{
+      font-size:clamp(1.9rem, 5vw, 3.1rem);
+      margin-bottom:12px;
+      font-weight:900;
+    }
+
+    .section-head p{
+      max-width:820px;
+      margin:auto;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:1rem;
+    }
+
+    /* NAV */
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:9999;
+      background:rgba(2,8,6,0.58);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-logo{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--green), var(--gold));
+      color:#052214;
+      font-weight:900;
+      box-shadow:var(--shadow);
+      flex-shrink:0;
+    }
+
+    .brand-text h1{
+      font-size:1.02rem;
+      line-height:1.05;
+      font-weight:900;
+      letter-spacing:1px;
+    }
+
+    .brand-text p{
+      color:var(--muted);
+      font-size:0.78rem;
+      margin-top:3px;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .lang-toggle{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      padding:5px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.10);
+    }
+
+    .lang-btn{
+      border:none;
+      background:transparent;
+      color:#fff;
+      padding:9px 13px;
+      border-radius:999px;
+      font-size:0.86rem;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    .lang-btn.active{
+      background:linear-gradient(135deg, var(--green), #12a55f);
+      color:#062313;
+    }
+
+    .menu-btn{
+      display:none;
+      width:48px;
+      height:48px;
+      border:none;
+      border-radius:16px;
+      color:#fff;
+      font-size:1.4rem;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.10);
+      cursor:pointer;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:0.92rem;
+      font-weight:800;
+      transition:0.25s ease;
+      border:1px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:#fff;
+      background:rgba(255,255,255,0.08);
+      border-color:rgba(255,255,255,0.10);
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding-top:92px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(120deg, rgba(0,0,0,0.55), rgba(0,0,0,0.30)),
+        url('images/kohda-hero.jpg') center/cover no-repeat;
+      z-index:-2;
+      opacity:0.97;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      height:220px;
+      background:linear-gradient(to top, rgba(3,10,8,1), rgba(3,10,8,0));
+      z-index:-1;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:26px;
+      align-items:center;
+      width:100%;
+    }
+
+    .hero-tag{
+      display:inline-block;
+      padding:11px 16px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.14);
+      font-size:0.88rem;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    .hero-content h2{
+      font-size:clamp(2.3rem, 6vw, 5rem);
+      line-height:0.98;
+      font-weight:900;
+      letter-spacing:1px;
+      margin-bottom:14px;
+      text-transform:uppercase;
+      text-shadow:0 6px 20px rgba(0,0,0,0.30);
+    }
+
+    .hero-content h2 span{
+      display:block;
+      color:var(--gold);
+    }
+
+    .hero-content p{
+      font-size:1.04rem;
+      max-width:700px;
+      line-height:1.8;
+      color:#eafcf3;
+      margin-bottom:26px;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:150px;
+      padding:14px 20px;
+      border-radius:999px;
+      font-size:0.96rem;
+      font-weight:900;
+      transition:0.25s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--green), #0fa65d);
+      color:#042012;
+      box-shadow:0 12px 28px rgba(18,128,71,0.35);
+    }
+
+    .btn-primary:hover,
+    .btn-outline:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-outline{
+      background:rgba(255,255,255,0.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.14);
+    }
+
+    .hero-panel{
+      border-radius:28px;
+      padding:24px;
+    }
+
+    .hero-panel h3{
+      color:var(--gold);
+      margin-bottom:16px;
+      font-size:1.18rem;
+    }
+
+    .hero-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .hero-item{
+      padding:14px 16px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-item strong{
+      display:block;
+      font-size:0.96rem;
+      margin-bottom:5px;
+    }
+
+    .hero-item span{
+      color:var(--muted);
+      font-size:0.9rem;
+      line-height:1.6;
+    }
+
+    /* SHARE BAR */
+    .share-bar{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .share-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.10);
+      color:#fff;
+      font-size:0.92rem;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    /* TICKER */
+    .ticker-wrap{
+      padding-top:6px;
+    }
+
+    .ticker-shell{
+      width:min(var(--maxw), 92%);
+      margin:auto;
+      overflow:hidden;
+      border-radius:999px;
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow:var(--shadow);
+    }
+
+    .ticker-track{
+      display:flex;
+      width:max-content;
+      animation:ticker 28s linear infinite;
+      will-change:transform;
+    }
+
+    .ticker-shell:hover .ticker-track{
+      animation-play-state:paused;
+    }
+
+    .ticker-item{
+      padding:14px 18px;
+      white-space:nowrap;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:0.94rem;
+      font-weight:900;
+    }
+
+    .ticker-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 14px rgba(255,211,106,0.9);
+      flex-shrink:0;
+    }
+
+    @keyframes ticker{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+
+    /* LAYOUTS */
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      border-radius:var(--radius);
+      padding:24px;
+    }
+
+    .card h3{
+      color:var(--gold);
+      font-size:1.14rem;
+      margin-bottom:12px;
+    }
+
+    .card p{
+      color:var(--muted);
+      line-height:1.75;
+      font-size:0.97rem;
+    }
+
+    .list{
+      display:grid;
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .list li{
+      list-style:none;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      line-height:1.7;
+      font-size:0.95rem;
+      color:#ecfff5;
+    }
+
+    .list li strong{
+      color:#fff;
+    }
+
+    /* NEWS */
+    .news-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .news-card{
+      border-radius:24px;
+      overflow:hidden;
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+    }
+
+    .news-thumb{
+      height:210px;
+      overflow:hidden;
+      background:#081812;
+    }
+
+    .news-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .news-body{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .news-date{
+      color:var(--green-2);
+      font-size:0.82rem;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .news-body h3{
+      color:#fff;
+      margin:0;
+      font-size:1.08rem;
+      line-height:1.5;
+    }
+
+    .news-body p{
+      color:var(--muted);
+      font-size:0.95rem;
+      line-height:1.7;
+    }
+
+    /* TEMPLE */
+    .badge-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .badge{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,211,106,0.12);
+      border:1px solid rgba(255,211,106,0.18);
+      color:#ffe9b4;
+      font-size:0.86rem;
+      font-weight:900;
+    }
+
+    /* PDF */
+    .pdf-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .pdf-card{
+      border-radius:22px;
+      padding:22px;
+    }
+
+    .pdf-card h4{
+      color:var(--gold);
+      margin-bottom:10px;
+      font-size:1rem;
+    }
+
+    .pdf-card p{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.95rem;
+      margin-bottom:14px;
+    }
+
+    .pdf-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .mini-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.10);
+      color:#fff;
+      font-size:0.9rem;
+      font-weight:900;
+    }
+
+    /* GALLERY */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      min-height:250px;
+      background:#081712;
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow:var(--shadow);
+      cursor:pointer;
+    }
+
+    .gallery-item img,
+    .gallery-item video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform 0.45s ease;
+      background:#06110d;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:hover video{
+      transform:scale(1.06);
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:18px 16px 16px;
+      background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    }
+
+    .gallery-overlay h4{
+      font-size:1rem;
+      margin-bottom:4px;
+    }
+
+    .gallery-overlay p{
+      font-size:0.86rem;
+      color:#d6ebde;
+      line-height:1.5;
+    }
+
+    /* SHOPS */
+    .shops-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+
+    .shop-card{
+      border-radius:24px;
+      overflow:hidden;
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+    }
+
+    .shop-banner{
+      height:230px;
+      overflow:hidden;
+      background:#081712;
+    }
+
+    .shop-banner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .shop-body{
+      padding:20px;
+    }
+
+    .shop-body h3{
+      color:#fff;
+      margin-bottom:12px;
+      font-size:1.15rem;
+    }
+
+    .shop-meta{
+      display:grid;
+      gap:10px;
+      margin-bottom:16px;
+    }
+
+    .shop-meta div{
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#ecfff5;
+      line-height:1.6;
+      font-size:0.94rem;
+      word-break:break-word;
+    }
+
+    .shop-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+
+    .qr-box{
+      display:grid;
+      grid-template-columns:110px 1fr;
+      gap:14px;
+      align-items:center;
+      padding:14px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .qr-box img{
+      width:100%;
+      max-width:110px;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:14px;
+      display:block;
+      background:#081712;
+    }
+
+    .qr-box p{
+      color:var(--muted);
+      font-size:0.92rem;
+      line-height:1.65;
+    }
+
+    /* MAP */
+    .map-frame{
+      width:100%;
+      min-height:380px;
+      border:0;
+      border-radius:24px;
+      overflow:hidden;
+      background:#081712;
+      box-shadow:var(--shadow);
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .contact-item{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-item strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1rem;
+    }
+
+    .contact-item span,
+    .contact-item a{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.95rem;
+      word-break:break-word;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:30px 0 40px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.02);
+    }
+
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-inner p{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:0.92rem;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.10);
+      font-size:0.9rem;
+      font-weight:900;
+    }
+
+    /* FLOAT BUTTONS */
+    .scroll-top{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:54px;
+      height:54px;
+      border:none;
+      border-radius:18px;
+      background:linear-gradient(135deg, var(--green), #10a35c);
+      color:#042012;
+      font-size:1.3rem;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:var(--shadow);
+      z-index:9998;
+      display:none;
+    }
+
+    .scroll-top.show{
+      display:block;
+    }
+
+    /* VIEWER */
+    .viewer{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.94);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:10000;
+      padding:20px;
+    }
+
+    .viewer.open{
+      display:flex;
+    }
+
+    .viewer-content{
+      position:relative;
+      width:min(1500px, 100%);
+      max-height:92vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#000;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.10);
+    }
+
+    .viewer-content img,
+    .viewer-content video{
+      max-width:100%;
+      max-height:92vh;
+      object-fit:contain;
+      display:block;
+      background:#000;
+    }
+
+    .viewer-close{
+      position:absolute;
+      top:12px;
+      right:12px;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:14px;
+      background:rgba(255,255,255,0.14);
+      color:#fff;
+      cursor:pointer;
+      font-size:1.2rem;
+      z-index:2;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px){
+      .hero-grid,
+      .grid-2,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .news-grid,
+      .pdf-grid,
+      .gallery-grid,
+      .grid-3,
+      .shops-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .hero{
+        min-height:auto;
+        padding-bottom:60px;
+      }
+    }
+
+    @media (max-width: 860px){
+      .menu-btn{
+        display:block;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:78px;
+        left:4%;
+        right:4%;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        background:rgba(2,8,6,0.98);
+        border:1px solid rgba(255,255,255,0.08);
+        border-radius:24px;
+        padding:14px;
+        box-shadow:var(--shadow);
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a{
+        width:100%;
+        text-align:center;
+      }
+    }
+
+    @media (max-width: 680px){
+      .section{
+        padding:66px 0;
+      }
+
+      .hero-content p{
+        font-size:0.97rem;
+      }
+
+      .hero-btns{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .news-grid,
+      .pdf-grid,
+      .gallery-grid,
+      .grid-3,
+      .shops-grid{
+        grid-template-columns:1fr;
+      }
+
+      .qr-box{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .map-frame{
+        min-height:290px;
+      }
+    }
+
+    @media (max-width: 480px){
+      .brand-text h1{
+        font-size:0.92rem;
+      }
+
+      .brand-text p{
+        font-size:0.72rem;
+      }
+
+      .lang-btn{
+        padding:8px 10px;
+        font-size:0.78rem;
+      }
+
+      .ticker-item{
+        font-size:0.86rem;
+        padding:12px 14px;
+      }
+
+      .hero-content h2{
+        font-size:clamp(2rem, 13vw, 3rem);
+      }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false">
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">
+        <div class="brand-logo">K</div>
+        <div class="brand-text">
+          <h1 data-en="KOHEDA VILLAGE" data-te="కోహెడా గ్రామం">KOHEDA VILLAGE</h1>
+          <p data-en="Official Digital Village Platform" data-te="అధికారిక డిజిటల్ గ్రామ వేదిక">Official Digital Village Platform</p>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="enBtn" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn" id="teBtn" onclick="setLanguage('te')">తెలుగు</button>
+        </div>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" data-en="Home" data-te="హోమ్">Home</a>
+        <a href="#news" data-en="News" data-te="వార్తలు">News</a>
+        <a href="#temple" data-en="Temple" data-te="దేవాలయం">Temple</a>
+        <a href="#newspapers" data-en="PDF News" data-te="PDF వార్తలు">PDF News</a>
+        <a href="#gallery" data-en="Gallery" data-te="గ్యాలరీ">Gallery</a>
+        <a href="#shops" data-en="Shops" data-te="షాపులు">Shops</a>
+        <a href="#map" data-en="Map" data-te="మ్యాప్">Map</a>
+        <a href="#contact" data-en="Contact" data-te="సంప్రదించండి">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag" data-en="Welcome to KOHEDA" data-te="కోహెడాకు స్వాగతం">Welcome to KOHEDA</div>
+
+        <h2>
+          <span data-en="KOHEDA" data-te="కోహెడా">KOHEDA</span>
+          <span data-en="Village Website" data-te="గ్రామ వెబ్‌సైట్">Village Website</span>
+        </h2>
+
+        <p
+          data-en="A premium digital home for KOHEDA. Explore village news, temple updates, newspaper PDFs, gallery media, local shops, and important village information in one modern mobile-friendly website."
+          data-te="కోహెడాకు ఇది ఒక ప్రీమియం డిజిటల్ ఇల్లు. గ్రామ వార్తలు, దేవాలయ సమాచారం, వార్తాపత్రిక PDFలు, గ్యాలరీ మీడియా, స్థానిక షాపులు మరియు ముఖ్యమైన గ్రామ సమాచారాన్ని ఒకే మొబైల్ ఫ్రెండ్లీ వెబ్‌సైట్‌లో చూడండి."
+        >
+          A premium digital home for KOHEDA. Explore village news, temple updates, newspaper PDFs, gallery media, local shops, and important village information in one modern mobile-friendly website.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#news" class="btn btn-primary" data-en="Latest Updates" data-te="తాజా అప్డేట్లు">Latest Updates</a>
+          <a href="#gallery" class="btn btn-outline" data-en="Open Gallery" data-te="గ్యాలరీ చూడండి">Open Gallery</a>
+        </div>
+
+        <div class="share-bar">
+          <button class="share-btn" onclick="shareOnWhatsApp()" data-en="Share on WhatsApp" data-te="వాట్సాప్‌లో షేర్ చేయండి">Share on WhatsApp</button>
+          <button class="share-btn" onclick="copySiteLink()" data-en="Copy Website Link" data-te="వెబ్‌సైట్ లింక్ కాపీ చేయండి">Copy Website Link</button>
+        </div>
+      </div>
+
+      <div class="hero-panel glass">
+        <h3 data-en="Quick Highlights" data-te="త్వరిత ముఖ్యాంశాలు">Quick Highlights</h3>
+
+        <div class="hero-list">
+          <div class="hero-item">
+            <strong data-en="Village News" data-te="గ్రామ వార్తలు">Village News</strong>
+            <span data-en="Daily notices, events, panchayat information, and local announcements." data-te="రోజువారీ నోటీసులు, కార్యక్రమాలు, పంచాయతీ సమాచారం మరియు స్థానిక ప్రకటనలు.">Daily notices, events, panchayat information, and local announcements.</span>
+          </div>
+
+          <div class="hero-item">
+            <strong data-en="Temple Updates" data-te="దేవాలయ అప్డేట్లు">Temple Updates</strong>
+            <span data-en="Pooja timings, special sevas, festivals, and temple notices." data-te="పూజ సమయాలు, ప్రత్యేక సేవలు, పండుగలు మరియు దేవాలయ ప్రకటనలు.">Pooja timings, special sevas, festivals, and temple notices.</span>
+          </div>
+
+          <div class="hero-item">
+            <strong data-en="PDF Newspapers" data-te="PDF వార్తాపత్రికలు">PDF Newspapers</strong>
+            <span data-en="Upload and open day-wise village documents, notices, and papers." data-te="రోజువారీ గ్రామ పత్రాలు, నోటీసులు మరియు వార్తాపత్రికలను అప్లోడ్ చేసి చూడండి.">Upload and open day-wise village documents, notices, and papers.</span>
+          </div>
+
+          <div class="hero-item">
+            <strong data-en="KOHEDA Shops" data-te="కోహెడా షాపులు">KOHEDA Shops</strong>
+            <span data-en="Shop details, WhatsApp, location, banners, and PhonePe QR support." data-te="షాపు వివరాలు, వాట్సాప్, లొకేషన్, బ్యానర్లు మరియు PhonePe QR వివరాలు.">Shop details, WhatsApp, location, banners, and PhonePe QR support.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-shell">
+      <div class="ticker-track">
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="KOHEDA village updates available here" data-te="కోహెడా గ్రామ అప్డేట్లు ఇక్కడ అందుబాటులో ఉన్నాయి">KOHEDA village updates available here</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Temple notices and festival announcements" data-te="దేవాలయ నోటీసులు మరియు పండుగ ప్రకటనలు">Temple notices and festival announcements</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Open day-wise PDF newspapers" data-te="రోజువారీ PDF వార్తాపత్రికలు చూడండి">Open day-wise PDF newspapers</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Explore KOHEDA shops and local business details" data-te="కోహెడా షాపులు మరియు స్థానిక వ్యాపార వివరాలు చూడండి">Explore KOHEDA shops and local business details</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Share this website on WhatsApp" data-te="ఈ వెబ్‌సైట్‌ను వాట్సాప్‌లో షేర్ చేయండి">Share this website on WhatsApp</span></div>
+
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="KOHEDA village updates available here" data-te="కోహెడా గ్రామ అప్డేట్లు ఇక్కడ అందుబాటులో ఉన్నాయి">KOHEDA village updates available here</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Temple notices and festival announcements" data-te="దేవాలయ నోటీసులు మరియు పండుగ ప్రకటనలు">Temple notices and festival announcements</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Open day-wise PDF newspapers" data-te="రోజువారీ PDF వార్తాపత్రికలు చూడండి">Open day-wise PDF newspapers</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Explore KOHEDA shops and local business details" data-te="కోహెడా షాపులు మరియు స్థానిక వ్యాపార వివరాలు చూడండి">Explore KOHEDA shops and local business details</span></div>
+        <div class="ticker-item"><span class="ticker-dot"></span><span data-en="Share this website on WhatsApp" data-te="ఈ వెబ్‌సైట్‌ను వాట్సాప్‌లో షేర్ చేయండి">Share this website on WhatsApp</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <section class="section" id="news">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini" data-en="Village News" data-te="గ్రామ వార్తలు">Village News</div>
+        <h2 data-en="Latest News & Announcements" data-te="తాజా వార్తలు & ప్రకటనలు">Latest News & Announcements</h2>
+        <p
+          data-en="Use this section for daily village updates, panchayat announcements, water supply notices, events, school information, health camps, and local public alerts."
+          data-te="రోజువారీ గ్రామ అప్డేట్లు, పంచాయతీ ప్రకటనలు, నీటి సరఫరా సమాచారం, కార్యక్రమాలు, పాఠశాల వార్తలు, ఆరోగ్య శిబిరాలు మరియు ప్రజా అలర్ట్స్ కోసం ఈ విభాగాన్ని ఉపయోగించండి."
+        >
+          Use this section for daily village updates, panchayat announcements, water supply notices, events, school information, health camps, and local public alerts.
+        </p>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-thumb">
+            <img src="images/news1.jpg" alt="Village News 1" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-date" data-en="Update • Today" data-te="అప్డేట్ • ఈ రోజు">Update • Today</div>
+            <h3 data-en="Village Development Meeting" data-te="గ్రామ అభివృద్ధి సమావేశం">Village Development Meeting</h3>
+            <p data-en="Add current village development, road work, drainage, electricity, and community updates here." data-te="గ్రామ అభివృద్ధి, రహదారి పనులు, డ్రైనేజీ, విద్యుత్ మరియు ఇతర సామాజిక అప్డేట్లను ఇక్కడ జోడించండి.">Add current village development, road work, drainage, electricity, and community updates here.</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-thumb">
+            <img src="images/news2.jpg" alt="Village News 2" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-date" data-en="Update • Today" data-te="అప్డేట్ • ఈ రోజు">Update • Today</div>
+            <h3 data-en="Special Temple Event Notice" data-te="ప్రత్యేక దేవాలయ కార్యక్రమ ప్రకటన">Special Temple Event Notice</h3>
+            <p data-en="Add temple event details, donation notices, pooja timings, and festival schedule here." data-te="దేవాలయ కార్యక్రమ వివరాలు, విరాళ సమాచారం, పూజ సమయాలు మరియు పండుగ షెడ్యూల్‌ను ఇక్కడ జోడించండి.">Add temple event details, donation notices, pooja timings, and festival schedule here.</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-thumb">
+            <img src="images/news3.jpg" alt="Village News 3" loading="lazy">
+          </div>
+          <div class="news-body">
+            <div class="news-date" data-en="Update • Today" data-te="అప్డేట్ • ఈ రోజు">Update • Today</div>
+            <h3 data-en="Public Notice" data-te="ప్రజా ప్రకటన">Public Notice</h3>
+            <p data-en="Add local alerts such as village clean-up, school events, medical camps, and important notices." data-te="గ్రామ శుభ్రత, పాఠశాల కార్యక్రమాలు, వైద్య శిబిరాలు మరియు ఇతర ముఖ్య ప్రకటనలను ఇక్కడ జోడించండి.">Add local alerts such as village clean-up, school events, medical camps, and important notices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLE -->
+  <section class="section" id="temple">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini" data-en="Temple Updates" data-te="దేవాలయ అప్డేట్లు">Temple Updates</div>
+        <h2 data-en="KOHEDA Temple Information" data-te="కోహెడా దేవాలయ సమాచారం">KOHEDA Temple Information</h2>
+        <p
+          data-en="Temple updates deserve their own place. Add pooja timings, special sevas, annual festivals, prasadam details, and important temple notices here."
+          data-te="దేవాలయ అప్డేట్లకు ప్రత్యేక స్థానం కావాలి. పూజ సమయాలు, ప్రత్యేక సేవలు, వార్షిక పండుగలు, ప్రసాదం వివరాలు మరియు ముఖ్య నోటీసులను ఇక్కడ జోడించండి."
+        >
+          Temple updates deserve their own place. Add pooja timings, special sevas, annual festivals, prasadam details, and important temple notices here.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card glass">
+          <h3 data-en="Today’s Temple Schedule" data-te="ఈ రోజు దేవాలయ షెడ్యూల్">Today’s Temple Schedule</h3>
+          <ul class="list">
+            <li><strong data-en="Morning Pooja:" data-te="ఉదయం పూజ:">Morning Pooja:</strong> 6:00 AM</li>
+            <li><strong data-en="Evening Harathi:" data-te="సాయంత్రం హారతి:">Evening Harathi:</strong> 7:00 PM</li>
+            <li><strong data-en="Special Seva:" data-te="ప్రత్యేక సేవ:">Special Seva:</strong> <span data-en="Add details here" data-te="వివరాలు ఇక్కడ జోడించండి">Add details here</span></li>
+            <li><strong data-en="Festival Notice:" data-te="పండుగ ప్రకటన:">Festival Notice:</strong> <span data-en="Add event details here" data-te="కార్యక్రమ వివరాలు ఇక్కడ జోడించండి">Add event details here</span></li>
+          </ul>
+
+          <div class="badge-row">
+            <div class="badge" data-en="Pooja Timings" data-te="పూజ సమయాలు">Pooja Timings</div>
+            <div class="badge" data-en="Festival Alerts" data-te="పండుగ అలర్ట్స్">Festival Alerts</div>
+            <div class="badge" data-en="Temple News" data-te="దేవాలయ వార్తలు">Temple News</div>
+            <div class="badge" data-en="Seva Information" data-te="సేవా సమాచారం">Seva Information</div>
+          </div>
+        </div>
+
+        <div class="card glass">
+          <h3 data-en="Temple Notice Board" data-te="దేవాలయ నోటీసు బోర్డు">Temple Notice Board</h3>
+          <p
+            data-en="This section is perfect for special pooja updates, annadanam information, festival invitations, and volunteer announcements."
+            data-te="ప్రత్యేక పూజ అప్డేట్లు, అన్నదానం సమాచారం, పండుగ ఆహ్వానాలు మరియు వాలంటీర్ ప్రకటనలకు ఇది సరైన విభాగం."
+          >
+            This section is perfect for special pooja updates, annadanam information, festival invitations, and volunteer announcements.
+          </p>
+
+          <ul class="list">
+            <li><strong data-en="Example:" data-te="ఉదాహరణ:">Example:</strong> <span data-en="Sri Rama Navami preparations started" data-te="శ్రీరామ నవమి ఏర్పాట్లు ప్రారంభమయ్యాయి">Sri Rama Navami preparations started</span></li>
+            <li><strong data-en="Example:" data-te="ఉదాహరణ:">Example:</strong> <span data-en="Saturday special pooja at 7 PM" data-te="శనివారం ప్రత్యేక పూజ సాయంత్రం 7 గంటలకు">Saturday special pooja at 7 PM</span></li>
+            <li><strong data-en="Example:" data-te="ఉదాహరణ:">Example:</strong> <span data-en="Annadanam on festival day" data-te="పండుగ రోజు అన్నదానం ఉంటుంది">Annadanam on festival day</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF -->
+  <section class="section" id="newspapers">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini" data-en="PDF Newspapers" data-te="PDF వార్తాపత్రికలు">PDF Newspapers</div>
+        <h2 data-en="Day-wise Documents & News Papers" data-te="రోజువారీ పత్రాలు & వార్తాపత్రికలు">Day-wise Documents & News Papers</h2>
+        <p
+          data-en="Upload day-wise PDF files here for village newspapers, public notices, temple brochures, invitations, circulars, and other records."
+          data-te="గ్రామ వార్తాపత్రికలు, ప్రజా నోటీసులు, దేవాలయ బ్రోషర్లు, ఆహ్వానాలు, సర్క్యులర్లు మరియు ఇతర పత్రాలను ఇక్కడ రోజు వారీగా అప్లోడ్ చేయండి."
+        >
+          Upload day-wise PDF files here for village newspapers, public notices, temple brochures, invitations, circulars, and other records.
+        </p>
+      </div>
+
+      <div class="pdf-grid">
+        <div class="pdf-card glass">
+          <h4 data-en="News Paper - Day 1" data-te="వార్తాపత్రిక - రోజు 1">News Paper - Day 1</h4>
+          <p data-en="Replace the link below with your uploaded first PDF file path." data-te="మీ మొదటి PDF ఫైల్ లింక్‌ను కింద జోడించండి.">Replace the link below with your uploaded first PDF file path.</p>
+          <div class="pdf-actions">
+            <a class="mini-btn" href="pdfs/news-day1.pdf" target="_blank" data-en="Open PDF" data-te="PDF ఓపెన్ చేయండి">Open PDF</a>
+          </div>
+        </div>
+
+        <div class="pdf-card glass">
+          <h4 data-en="News Paper - Day 2" data-te="వార్తాపత్రిక - రోజు 2">News Paper - Day 2</h4>
+          <p data-en="Replace this with the second day newspaper or village update PDF." data-te="దీన్ని రెండో రోజు వార్తాపత్రిక లేదా గ్రామ అప్డేట్ PDFతో మార్చండి.">Replace this with the second day newspaper or village update PDF.</p>
+          <div class="pdf-actions">
+            <a class="mini-btn" href="pdfs/news-day2.pdf" target="_blank" data-en="Open PDF" data-te="PDF ఓపెన్ చేయండి">Open PDF</a>
+          </div>
+        </div>
+
+        <div class="pdf-card glass">
+          <h4 data-en="Temple Notice PDF" data-te="దేవాలయ నోటీసు PDF">Temple Notice PDF</h4>
+          <p data-en="Use this for temple event invitations, donation letters, and important brochures." data-te="దేవాలయ ఆహ్వానాలు, విరాళ లేఖలు మరియు ముఖ్యమైన బ్రోషర్ల కోసం దీన్ని ఉపయోగించండి.">Use this for temple event invitations, donation letters, and important brochures.</p>
+          <div class="pdf-actions">
+            <a class="mini-btn" href="pdfs/temple-notice.pdf" target="_blank" data-en="Open PDF" data-te="PDF ఓపెన్ చేయండి">Open PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini" data-en="Village Gallery" data-te="గ్రామ గ్యాలరీ">Village Gallery</div>
+        <h2 data-en="Photos & Videos of KOHEDA" data-te="కోహెడా ఫోటోలు & వీడియోలు">Photos & Videos of KOHEDA</h2>
+        <p
+          data-en="Upload high-quality images and videos here. Temple festivals, village roads, drone shots, events, nature, and memories will look sharp in this layout."
+          data-te="హై క్వాలిటీ ఫోటోలు మరియు వీడియోలను ఇక్కడ అప్లోడ్ చేయండి. దేవాలయ ఉత్సవాలు, గ్రామ రోడ్లు, డ్రోన్ షాట్లు, ప్రకృతి, వేడుకలు ఇవన్నీ ఈ లేఔట్‌లో అద్భుతంగా కనిపిస్తాయి."
+        >
+          Upload high-quality images and videos here. Temple festivals, village roads, drone shots, events, nature, and memories will look sharp in this layout.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openViewer('image','images/gallery1.jpg')">
+          <img src="images/gallery1.jpg" alt="Village Entrance" loading="lazy">
+          <div class="gallery-overlay">
+            <h4 data-en="Village Entrance" data-te="గ్రామ ప్రవేశం">Village Entrance</h4>
+            <p data-en="Replace with a real KOHEDA village image." data-te="దీన్ని అసలు కోహెడా గ్రామ ఫోటోతో మార్చండి.">Replace with a real KOHEDA village image.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openViewer('image','images/gallery2.jpg')">
+          <img src="images/gallery2.jpg" alt="Temple View" loading="lazy">
+          <div class="gallery-overlay">
+            <h4 data-en="Temple View" data-te="దేవాలయ దృశ్యం">Temple View</h4>
+            <p data-en="Festival lights, pooja, temple street, or main entrance." data-te="పండుగ లైటింగ్, పూజ, దేవాలయ వీధి లేదా ప్రధాన గేటు.">Festival lights, pooja, temple street, or main entrance.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openViewer('video','videos/kohda-video1.mp4')">
+          <video muted playsinline preload="metadata">
+            <source src="videos/kohda-video1.mp4" type="video/mp4">
+          </video>
+          <div class="gallery-overlay">
+            <h4 data-en="Village Video" data-te="గ్రామ వీడియో">Village Video</h4>
+            <p data-en="Add a walk-through or aerial video here." data-te="ఇక్కడ గ్రామం చుట్టూ వీడియో లేదా డ్రోన్ వీడియో జోడించండి.">Add a walk-through or aerial video here.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openViewer('image','images/gallery3.jpg')">
+          <img src="images/gallery3.jpg" alt="Village Festival" loading="lazy">
+          <div class="gallery-overlay">
+            <h4 data-en="Festival Moments" data-te="పండుగ క్షణాలు">Festival Moments</h4>
+            <p data-en="Use bright and clear festival photos." data-te="స్పష్టంగా కనిపించే పండుగ ఫోటోలు ఉపయోగించండి.">Use bright and clear festival photos.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openViewer('video','videos/kohda-video2.mp4')">
+          <video muted playsinline preload="metadata">
+            <source src="videos/kohda-video2.mp4" type="video/mp4">
+          </video>
+          <div class="gallery-overlay">
+            <h4 data-en="Temple Event Video" data-te="దేవాలయ కార్యక్రమ వీడియో">Temple Event Video</h4>
+            <p data-en="Add a special event clip here." data-te="ఇక్కడ ప్రత్యేక కార్యక్రమ వీడియో జోడించండి.">Add a special event clip here.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openViewer('image','images/gallery4.jpg')">
+          <img src="images/gallery4.jpg" alt="Village Nature" loading="lazy">
+          <div class="gallery-overlay">
+            <h4 data-en="Fields & Nature" data-te="పొలాలు & ప్రకృతి">Fields & Nature</h4>
+            <p data-en="Show the peaceful side of KOHEDA." data-te="కోహెడా ప్రశాంత ప్రకృతి అందాలను చూపించండి.">Show the peaceful side of KOHEDA.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOPS -->
+  <section class="section" id="shops">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini" data-en="KOHEDA Shops" data-te="కోహెడా షాపులు">KOHEDA Shops</div>
+        <h2 data-en="Local Shops & Business Directory" data-te="స్థానిక షాపులు & వ్యాపార వివరాలు">Local Shops & Business Directory</h2>
+        <p
+          data-en="Add shop details here with mobile number, email, WhatsApp number, location, banner image, and PhonePe QR code."
+          data-te="మొబైల్ నంబర్, ఇమెయిల్, వాట్సాప్ నంబర్, లొకేషన్, షాప్ బ్యానర్ మరియు PhonePe QR కోడ్‌తో షాపు వివరాలను ఇక్కడ జోడించండి."
+        >
+          Add shop details here with mobile number, email, WhatsApp number, location, banner image, and PhonePe QR code.
+        </p>
+      </div>
+
+      <div class="shops-grid">
+        <div class="shop-card">
+          <div class="shop-banner">
+            <img src="images/shop-banner-1.jpg" alt="Shop Banner 1" loading="lazy">
+          </div>
+          <div class="shop-body">
+            <h3>Shop Name 1</h3>
+
+            <div class="shop-meta">
+              <div><strong data-en="Mobile Number:" data-te="మొబైల్ నంబర్:">Mobile Number:</strong> 9999999999</div>
+              <div><strong data-en="Mail ID:" data-te="మెయిల్ ఐడి:">Mail ID:</strong> shop1@example.com</div>
+              <div><strong data-en="WhatsApp Number:" data-te="వాట్సాప్ నంబర్:">WhatsApp Number:</strong> 9999999999</div>
+              <div><strong data-en="Shop Location:" data-te="షాప్ లొకేషన్:">Shop Location:</strong> Main Road, KOHEDA</div>
+            </div>
+
+            <div class="shop-actions">
+              <a class="mini-btn" href="images/shop-banner-1.jpg" target="_blank" data-en="Open Banner" data-te="బ్యానర్ చూడండి">Open Banner</a>
+              <a class="mini-btn" href="https://wa.me/919999999999" target="_blank" data-en="WhatsApp Shop" data-te="వాట్సాప్ షాప్">WhatsApp Shop</a>
+              <a class="mini-btn" href="https://maps.google.com/?q=18.168861,79.096194" target="_blank" data-en="Open Location" data-te="లొకేషన్ చూడండి">Open Location</a>
+            </div>
+
+            <div class="qr-box">
+              <img src="images/phonepe-qr-1.jpg" alt="PhonePe QR 1" loading="lazy">
+              <p
+                data-en="Upload the shop’s PhonePe QR code image here so visitors can scan and pay easily."
+                data-te="షాప్ PhonePe QR కోడ్‌ను ఇక్కడ జోడించండి. సందర్శకులు సులభంగా స్కాన్ చేసి చెల్లించవచ్చు."
+              >
+                Upload the shop’s PhonePe QR code image here so visitors can scan and pay easily.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-card">
+          <div class="shop-banner">
+            <img src="images/shop-banner-2.jpg" alt="Shop Banner 2" loading="lazy">
+          </div>
+          <div class="shop-body">
+            <h3>Shop Name 2</h3>
+
+            <div class="shop-meta">
+              <div><strong data-en="Mobile Number:" data-te="మొబైల్ నంబర్:">Mobile Number:</strong> 8888888888</div>
+              <div><strong data-en="Mail ID:" data-te="మెయిల్ ఐడి:">Mail ID:</strong> shop2@example.com</div>
+              <div><strong data-en="WhatsApp Number:" data-te="వాట్సాప్ నంబర్:">WhatsApp Number:</strong> 8888888888</div>
+              <div><strong data-en="Shop Location:" data-te="షాప్ లొకేషన్:">Shop Location:</strong> Temple Street, KOHEDA</div>
+            </div>
+
+            <div class="shop-actions">
+              <a class="mini-btn" href="images/shop-banner-2.jpg" target="_blank" data-en="Open Banner" data-te="బ్యానర్ చూడండి">Open Banner</a>
+              <a class="mini-btn" href="https://wa.me/918888888888" target="_blank" data-en="WhatsApp Shop" data-te="వాట్సాప్ షాప్">WhatsApp Shop</a>
+              <a class="mini-btn" href="https://maps.google.com/?q=18.168861,79.096194" target="_blank" data-en="Open Location" data-te="లొకేషన్ చూడండి">Open Location</a>
+            </div>
+
+            <div class="qr-box">
+              <img src="images/phonepe-qr-2.jpg" alt="PhonePe QR 2" loading="lazy">
+              <p
+                data-en="Add another shop QR code here. This section works well for local business promotion."
+                data-te="ఇక్కడ మరో షాప్ QR కోడ్ జోడించండి. స్థానిక వ్యాపార ప్రచారానికి ఇది చాలా బాగుంటుంది."
+              >
+                Add another shop QR code here. This section works well for local business promotion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section" id="map">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini" data-en="Village Location" data-te="గ్రామ స్థానం">Village Location</div>
+        <h2 data-en="KOHEDA Google Map" data-te="కోహెడా గూగుల్ మ్యాప్">KOHEDA Google Map</h2>
+        <p
+          data-en="Integrated Google map for KOHEDA village location."
+          data-te="కోహెడా గ్రామ స్థానం కోసం గూగుల్ మ్యాప్ ఇక్కడ సమీకరించబడింది."
+        >
+          Integrated Google map for KOHEDA village location.
+        </p>
+      </div>
+
+      <iframe
+        class="map-frame"
+        src="https://www.google.com/maps?q=18.168861,79.096194&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="mini" data-en="Contact" data-te="సంప్రదించండి">Contact</div>
+        <h2 data-en="Important Contact Details" data-te="ముఖ్య సంప్రదింపు వివరాలు">Important Contact Details</h2>
+        <p
+          data-en="Add official and useful contact details here for villagers and visitors."
+          data-te="గ్రామస్తులు మరియు సందర్శకుల కోసం ఉపయోగపడే అధికారిక సంప్రదింపు వివరాలను ఇక్కడ జోడించండి."
+        >
+          Add official and useful contact details here for villagers and visitors.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card glass">
+          <h3 data-en="Village Contacts" data-te="గ్రామ సంప్రదింపులు">Village Contacts</h3>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <strong data-en="Village Name" data-te="గ్రామం పేరు">Village Name</strong>
+              <span data-en="KOHEDA" data-te="కోహెడా">KOHEDA</span>
+            </div>
+
+            <div class="contact-item">
+              <strong data-en="Panchayat Contact" data-te="పంచాయతీ సంప్రదింపు">Panchayat Contact</strong>
+              <span data-en="Add phone number here" data-te="ఫోన్ నంబర్ ఇక్కడ జోడించండి">Add phone number here</span>
+            </div>
+
+            <div class="contact-item">
+              <strong data-en="Temple Contact" data-te="దేవాలయ సంప్రదింపు">Temple Contact</strong>
+              <span data-en="Add temple phone number here" data-te="దేవాలయ ఫోన్ నంబర్ ఇక్కడ జోడించండి">Add temple phone number here</span>
+            </div>
+
+            <div class="contact-item">
+              <strong data-en="Map Link" data-te="మ్యాప్ లింక్">Map Link</strong>
+              <a href="https://www.google.com/maps?q=18.168861,79.096194" target="_blank" data-en="Open KOHEDA Location" data-te="కోహెడా లొకేషన్ చూడండి">Open KOHEDA Location</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass">
+          <h3 data-en="Digital Details" data-te="డిజిటల్ వివరాలు">Digital Details</h3>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <strong>Email</strong>
+              <a href="mailto:example@kohda.com">example@kohda.com</a>
+            </div>
+
+            <div class="contact-item">
+              <strong data-en="Website Admin" data-te="వెబ్‌సైట్ నిర్వాహకుడు">Website Admin</strong>
+              <span data-en="Add your admin or management name here" data-te="ఇక్కడ నిర్వాహకుడి పేరు జోడించండి">Add your admin or management name here</span>
+            </div>
+
+            <div class="contact-item">
+              <strong data-en="Updates Frequency" data-te="అప్డేట్ల వ్యవధి">Updates Frequency</strong>
+              <span data-en="Daily / Weekly / Festival-based" data-te="రోజువారీ / వారానికొకసారి / పండుగల ఆధారంగా">Daily / Weekly / Festival-based</span>
+            </div>
+
+            <div class="contact-item">
+              <strong data-en="WhatsApp Share" data-te="వాట్సాప్ షేర్">WhatsApp Share</strong>
+              <a href="javascript:void(0)" onclick="shareOnWhatsApp()" data-en="Share Website" data-te="వెబ్‌సైట్ షేర్ చేయండి">Share Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <p
+        data-en="© 2026 KOHEDA Village Website. Built for village identity, temple updates, community news, local business visibility, and public information."
+        data-te="© 2026 కోహెడా గ్రామ వెబ్‌సైట్. గ్రామ గుర్తింపు, దేవాలయ అప్డేట్లు, సామాజిక వార్తలు, స్థానిక వ్యాపార గుర్తింపు మరియు ప్రజా సమాచార కోసం రూపొందించబడింది."
+      >
+        © 2026 KOHEDA Village Website. Built for village identity, temple updates, community news, local business visibility, and public information.
+      </p>
+
+      <div class="footer-links">
+        <a href="#home" data-en="Home" data-te="హోమ్">Home</a>
+        <a href="#news" data-en="News" data-te="వార్తలు">News</a>
+        <a href="#gallery" data-en="Gallery" data-te="గ్యాలరీ">Gallery</a>
+        <a href="#shops" data-en="Shops" data-te="షాపులు">Shops</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOAT -->
+  <button class="scroll-top" id="scrollTopBtn">↑</button>
+
+  <!-- VIEWER -->
+  <div class="viewer" id="viewer">
+    <div class="viewer-content" id="viewerContent">
+      <button class="viewer-close" id="viewerClose">✕</button>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      menuBtn.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    // Scroll top
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Active link
+    const sections = document.querySelectorAll('header.hero, section.section');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 150;
+        const height = section.offsetHeight;
+        if (pageYOffset >= top && pageYOffset < top + height) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navAnchors.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) {
+          a.classList.add('active');
+        }
+      });
+    });
+
+    // Viewer
+    const viewer = document.getElementById('viewer');
+    const viewerContent = document.getElementById('viewerContent');
+    const viewerClose = document.getElementById('viewerClose');
+
+    function openViewer(type, src) {
+      const oldMedia = viewerContent.querySelector('img, video');
+      if (oldMedia) oldMedia.remove();
+
+      let media;
+      if (type === 'image') {
+        media = document.createElement('img');
+        media.src = src;
+        media.alt = 'Expanded View';
+      } else {
+        media = document.createElement('video');
+        media.src = src;
+        media.controls = true;
+        media.autoplay = true;
+        media.playsInline = true;
+      }
+
+      viewerContent.appendChild(media);
+      viewer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeViewer() {
+      const media = viewerContent.querySelector('img, video');
+      if (media && media.tagName === 'VIDEO') media.pause();
+      if (media) media.remove();
+      viewer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    viewerClose.addEventListener('click', closeViewer);
+    viewer.addEventListener('click', (e) => {
+      if (e.target === viewer) closeViewer();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeViewer();
+
+      // no-copy protection
+      if ((e.ctrlKey || e.metaKey) && ['c','u','s','p','x','a'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
+    });
+
+    document.addEventListener('selectstart', e => e.preventDefault());
+    document.addEventListener('dragstart', e => e.preventDefault());
+
+    // Telugu / English toggle
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem('siteLanguage', lang);
+
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'te' ? el.getAttribute('data-te') : el.getAttribute('data-en');
+      });
+
+      document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+      document.getElementById('teBtn').classList.toggle('active', lang === 'te');
+    }
+
+    const savedLang = localStorage.getItem('siteLanguage') || 'en';
+    setLanguage(savedLang);
+
+    // WhatsApp share
+    function shareOnWhatsApp() {
+      const siteUrl = 'https://yourwebsiteurl.com/';
+      const text = encodeURIComponent('Explore KOHEDA Village official website: ' + siteUrl);
+      window.open('https://wa.me/?text=' + text, '_blank');
+    }
+
+    // Copy link
+    async function copySiteLink() {
+      const siteUrl = 'https://yourwebsiteurl.com/';
+      try {
+        await navigator.clipboard.writeText(siteUrl);
+        alert('Website link copied');
+      } catch (e) {
+        alert(siteUrl);
+      }
+    }
+  </script>
+</body>
+</html>
