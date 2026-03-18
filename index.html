@@ -1348,15 +1348,26 @@
         </div>
 
         <div class="gallery-item" onclick="openViewer('video','videos/kohda-video2.mp4')">
-          <video muted playsinline preload="metadata">
-            <source src="videos/kohda-video2.mp4" type="video/mp4">
-          </video>
-          <div class="gallery-overlay">
-            <h4 data-en="Temple Event Video" data-te="దేవాలయ కార్యక్రమ వీడియో">Temple Event Video</h4>
-            <p data-en="Add a special event clip here." data-te="ఇక్కడ ప్రత్యేక కార్యక్రమ వీడియో జోడించండి.">Add a special event clip here.</p>
-          </div>
-        </div>
 
+  <video 
+    poster="videos/temple-preview.jpg" 
+    muted 
+    playsinline 
+    preload="auto"
+    style="width:100%; height:250px; object-fit:cover; border-radius:15px;">
+    
+    <source src="videos/kohda-video2.mp4" type="video/mp4">
+    
+  </video>
+
+  <div class="gallery-overlay">
+    <h4 data-en="Temple Event Video" data-te="దేవాలయ కార్యక్రమ వీడియో">Temple Event Video</h4>
+    <p data-en="Add a special event clip here." data-te="ఇక్కడ ప్రత్యేక కార్యక్రమ వీడియో జోడించండి.">
+      Add a special event clip here.
+    </p>
+  </div>
+
+</div>
         <div class="gallery-item" onclick="openViewer('image','images/gallery4.jpg')">
           <img src="images/gallery4.jpg" alt="Village Nature" loading="lazy">
           <div class="gallery-overlay">
